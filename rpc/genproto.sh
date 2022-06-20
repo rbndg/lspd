@@ -1,2 +1,2 @@
 #!/bin/bash
-protoc -I . lspd.proto --go_out=plugins=grpc:.
+protoc -I . lspd.proto --go-grpc_out=./

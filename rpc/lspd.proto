@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+option go_package ="../";
 option java_multiple_files = true;
 option java_package = "io.grpc.lspd.service";
 option java_outer_classname = "LspdProto";
@@ -59,6 +59,10 @@ message ChannelInformationReply {
 message OpenChannelRequest {
   /// The identity pubkey of the Lightning node
   string pubkey = 1 [ json_name = "pubkey" ];
+  /// The channel capacity that
+  int64 channel_capacity = 4 [ json_name = "channel_capacity" ];
+  // channel will stay open for a minimum of
+  int64 min_inactive_duration = 12;
 }
 
 message OpenChannelReply {
